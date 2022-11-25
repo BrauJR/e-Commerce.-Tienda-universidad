@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Sniglet&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Acme', sans-serif;
+    font-family: 'Sniglet', cursive;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+    cursor: pointer;
+}
+
+a:hover {
+    color: #0965a5;
+}
+
+fieldset {
+    border-spacing: 40px;
+    border-color: #113241;
+    font-size: larger;
+    border-spacing: 50px;
+    padding: 1em;
+}
+
+footer {
+    height: 50px;
+    background-color: #d4f9ff;
+    padding: 15px;
+    text-align: center;
+}
+
+header {
+    font-size: larger;
+    background-color: #fdb86d;
+}
+
+header:hover {
+    background-color: #ffff;
+}
+
+section {
+    padding: 30px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+
+/* Clases */
+.bienvenidaIndex {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(243, 229, 229, 0.5);
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+    text-align: center;
+    line-height: 4em;
+}
+
+
+.contenidoContacto {
+    position: absolute;
+    height: 100vh;
+    width: 90%;
+    background-color: #ffff;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+    padding: 30px;
+}
+
+.contenidoContacto h1 {
+    text-align: center;
+    background: linear-gradient(#113241, #0965a5);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.contenidoContacto h3 {
+    padding: 70px;
+    text-align: center;
+}
+
+.fondoContacto {
+    position: relative;
+    height: 100vh;
+    background-color: antiquewhite;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.iconosAside {
+    width: 10%;
+    height: 10%;
+}
+
+.imgProductos {
+    border-radius: 90px;
+    width: 30%;
+    height: 30%;
+
+}
+
+.principalIndex {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-image: url(../imagenes/fondoIndex.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.productos {
+    text-align: center;
+    padding: 30px;
+}
+
+.productos ol {
+    text-align: justify;
+}
+
+/* ID */
+#descripcionSomos {
+    padding-top: 2em;
+    text-align: center;
+    line-height: 3em;
+}
+
+#esloganSomos {
+    background: linear-gradient(#113241, #0965a5);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+#imgInicio {
+    width: 50%;
+    height: 40%;
+    border-radius: 30px 0 30px;
+}
+
+#imgSomos {
+    width: 30%;
+    height: 30%;
+    border-radius: 90px;
+    box-shadow: inset;
+}
+
+#mapa {
+    text-align: center;
+}
+
+#mensajeBienvenida {
+    text-align: center;
+}
+
+#productosPersonalizacion {
+    text-align: center;
+    padding: 50px;
+}
+
+#productosTalla  {
+    text-align: center;
+}
+
+#productosTalla table {
+    table-layout: fixed;
+    width: 100%;
+
+    border: 3px solid #c85a00;
+}
