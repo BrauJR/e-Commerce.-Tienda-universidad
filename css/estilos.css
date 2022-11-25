@@ -112,9 +112,7 @@ ul {
     position: relative;
     height: 100vh;
     width: 100%;
-    background-image: url(../imagenes/fondoIndex.png);
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: #fdb86d;
     overflow: hidden;
 }
 
