@@ -14,7 +14,9 @@ a {
 }
 
 a:hover {
-    color: #0965a5;
+    border-top: 3px solid #0965a5;
+    border-bottom: 3px solid #0965a5;
+    transition: 0.2s;
 }
 
 fieldset {
@@ -32,23 +34,38 @@ footer {
     text-align: center;
 }
 
+
 header {
     font-size: larger;
     background-color: #fdb86d;
+    height: 60px;
+    transition: .8s;
 }
 
 header:hover {
     background-color: #ffff;
+    transition: .8s;
+}
+
+
+nav ul {
+    height: 60px;
+    list-style-type: none;
+
+    display: flex;
+    gap: 5rem;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+li {
+    flex-shrink: 1;
 }
 
 section {
     padding: 30px;
 }
-
-ul {
-    list-style-type: none;
-}
-
 
 /* Clases */
 .bienvenidaIndex {
@@ -60,9 +77,9 @@ ul {
     left: 50%;
     transform: translate(-50%);
     text-align: center;
-    line-height: 4em;
+    line-height: 3em;
+    padding: 20px;
 }
-
 
 .contenidoContacto {
     position: absolute;
@@ -96,9 +113,9 @@ ul {
     overflow: hidden;
 }
 
-.iconosAside {
-    width: 10%;
-    height: 10%;
+.iconoGarra {
+
+    padding: 40px;
 }
 
 .imgProductos {
@@ -117,12 +134,63 @@ ul {
 }
 
 .productos {
+    display: flex;
+    justify-content: space-between;
     text-align: center;
     padding: 30px;
 }
 
 .productos ol {
     text-align: justify;
+}
+
+.remove-bg {
+    filter: brightness(1.1);
+    mix-blend-mode: multiply;
+}
+
+.tiendaGridPadre {
+    display: grid;
+    gap: 3rem;
+    justify-content: center;
+
+    background-color:#d4f9ff;
+    height: 100vh;
+    padding: 20px;
+    grid-template-areas: 'a b c d'
+        'e f g h';
+        grid-template-columns: 20% 20% 20% 20%;
+}
+
+.tiendaA {
+    grid-area: a;
+    background-color: #113241;
+}
+
+.al img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.tiendaB {
+    grid-area: b;
+    background-color: red;
+}
+
+.tiendaC {
+    grid-area: c;
+    background-color: rgb(255, 0, 242);
+}
+
+.tiendaD {
+    grid-area: d;
+    background-color: blue;
+}
+
+.tiendaE {
+    grid-area: e;
+    background-color: blue;
 }
 
 /* ID */
@@ -132,7 +200,7 @@ ul {
     line-height: 3em;
 }
 
-#esloganSomos {
+#colorTitulos {
     background: linear-gradient(#113241, #0965a5);
     -webkit-background-clip: text;
     color: transparent;
@@ -164,13 +232,12 @@ ul {
     padding: 50px;
 }
 
-#productosTalla  {
+#productosTalla {
     text-align: center;
 }
 
 #productosTalla table {
     table-layout: fixed;
     width: 100%;
-
     border: 3px solid #c85a00;
 }
