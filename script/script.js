@@ -1,23 +1,18 @@
 
-var numero = 15;
-var cadenaDeTexto = "Hola!!! Feliz Año Nuevo"
-var verdaderoBoolean = true;
-var indefinido = undefined;
-var nada = null;
-
-let variableLocal = "Casa";
+let numero = 15;
+let cadenaDeTexto = "Hola!!! Feliz Año Nuevo"
+let verdaderoBoolean = true;
+let indefinido = undefined;
+let nada = null;
 
 const curp = "EMTE0923RLP093";
 
-console.warn("..........Variables Globales..........");
+console.warn("..........Variables..........");
 console.log("number: " + numero);
 console.log("String: " + cadenaDeTexto);
 console.log("boolean: " + verdaderoBoolean);
 console.log("undefined: " + indefinido);
 console.log("null: " + nada);
-
-console.warn("..........Variable Local..........");
-console.log("let: " + variableLocal);
 
 console.warn("..........Constante..........");
 console.log("CURP: " + curp)
