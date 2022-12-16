@@ -140,7 +140,7 @@ section {
 .fondoContacto {
   position: relative;
   height: 100vh;
-  background-color: antiquewhite;
+  background-color: white;
   background-repeat: no-repeat;
   background-size: cover;
   overflow: hidden;
