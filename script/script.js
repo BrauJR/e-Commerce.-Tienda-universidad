@@ -1,5 +1,6 @@
 // ----------------------------- ACTIVIDAD 5 ----------------------------- 
 /*
+console.log("______________ ACTIVIDAD 5 ______________")
 let numero = 15;
 let cadenaDeTexto = "Hola!!! Feliz Año Nuevo"
 let verdaderoBoolean = true;
@@ -40,6 +41,8 @@ console.log(`${numero1} === ${numero2} es ${comparacion}`)
 */
 
 // ----------------------------- ACTIVIDAD 6 ----------------------------- 
+
+console.log("______________ ACTIVIDAD 6 ______________")
 // Punto 1
 console.log("\t****** FUNCIÓN SUMA ****** ");
 function suma(x, y, z) {
@@ -99,6 +102,73 @@ console.log(saludo);
 console.log("Hoy es el día " + dia + " de enero");
 console.log("Del año " + año);
 
+
+// ----------------------------- ACTIVIDAD 7 ----------------------------- 
+
+console.log("______________ ACTIVIDAD 7 ______________")
+// Punto 1
+console.log("// Punto 1");
+let edadAcceso = 19;
+console.log("\tLa edad es: " + edadAcceso)
+if (edadAcceso >= 18) {
+    console.log("VÁLIDO");
+} else {
+    console.log("NO VÁLIDO");
+}
+
+// Punto 2
+console.log("// Punto 2");
+const carrito = [];
+
+const agregarCarrito = (producto, carrito) => {
+    carrito.push(producto);
+    console.log("¡Producto agregado correctamente!")
+}
+
+const productos = [
+    {
+        id: "itp100",
+        nombre: "Sudadera Garra",
+        precio: 550
+    },
+    {
+        id: "itp101",
+        nombre: "Playera negra",
+        precio: 250
+    },
+    {
+        id: "itp102",
+        nombre: "Playera melón",
+        precio: 250
+    },
+    {
+        id: "itp103",
+        nombre: "Sudadera Negra",
+        precio: 550
+    }
+];
+
+console.log("\tProductos")
+for (let i = 0; i < productos.length; i++) {
+    console.log(productos[i]);
+}
+
+// Punto 3
+console.log("// Punto 3");
+console.log("Se está mostrando mediante prompt y alert")
+alert("Bienvenido a CinEMTECH 🎬");
+let edadEntrada = parseInt(prompt("Ingresa la opción correspondiente a tu edad: \n1. Soy menor de 18 años \n2. Soy mayor de 18 años \n3. Soy de la tercera edad"));
+switch (edadEntrada) {
+    case 1:
+        alert("Tienes un descuento de niño del 20% 👦");
+        break;
+    case 2:
+        alert("Tienes un descuento de adulto del 10% 🧑");
+        break;
+    case 3:
+        alert("Tienes un descuento de la tercera edad del 50% 👵");
+        break;
+}
 
 
 
