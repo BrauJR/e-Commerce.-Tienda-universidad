@@ -109,7 +109,7 @@ section {
   position: absolute;
   height: 100vh;
   width: 90%;
-  background-image: url(../imagenes/inicio.jpg);
+  background-image: url(./imagenes/inicio.jpg);
   background-size: cover;
   top: 0;
   left: 50%;
@@ -181,6 +181,10 @@ section {
 .menu-principal:hover {
   background-color: white;
   transition: 0.8s;
+}
+
+.movimientoIconos:hover {
+  transform: rotate(15deg)
 }
 
 .opiniones {

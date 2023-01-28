@@ -41,7 +41,7 @@ console.log(`${numero1} === ${numero2} es ${comparacion}`)
 */
 
 // ----------------------------- ACTIVIDAD 6 ----------------------------- 
-
+/*
 console.log("______________ ACTIVIDAD 6 ______________")
 // Punto 1
 console.log("\t****** FUNCIÓN SUMA ****** ");
@@ -101,7 +101,7 @@ const [saludo, dia, año] = arreglo;
 console.log(saludo);
 console.log("Hoy es el día " + dia + " de enero");
 console.log("Del año " + año);
-
+*/
 
 // ----------------------------- ACTIVIDAD 7 ----------------------------- 
 
@@ -129,12 +129,12 @@ const productos = [
     {
         id: "itp100",
         nombre: "Sudadera Garra",
-        precio: 550
+        precio: 550.50
     },
     {
         id: "itp101",
         nombre: "Playera negra",
-        precio: 250
+        precio: 150.98
     },
     {
         id: "itp102",
@@ -144,7 +144,7 @@ const productos = [
     {
         id: "itp103",
         nombre: "Sudadera Negra",
-        precio: 550
+        precio: 650.89
     }
 ];
 
@@ -170,7 +170,47 @@ switch (edadEntrada) {
         break;
 }
 
+// ----------------------------- ACTIVIDAD 8 ----------------------------- 
 
+console.log("______________ ACTIVIDAD 8 ______________")
+// Punto 1
+console.log("// Punto 1");
+console.log("Productos:")
+productos.forEach((e) => {
+    console.log("\t" + e.nombre);
+})
 
+// Punto 2
+console.log("// Punto 2");
+let productosCaros = productos.filter((e) => e.precio > 200);
+console.log("Los productos mayores de $200 son: " , productosCaros);
 
+// Punto 3
+console.log("// Punto 3");
+const preciosProductos = productos.map(item => item.precio);
+let promedioProductos = preciosProductos.reduce((acumulador, item) => acumulador + item)
+console.log("El promedio del precio de los productos es: $" + promedioProductos / preciosProductos.length);
 
+// Punto 4
+console.log("// Punto 4")
+let nombresProductos = productos.map(e => e.nombre);
+nombresProductos.sort((a, b) => {
+    if(a == b) {
+        return 0;
+    }
+    if(a < b) {
+        return -1;
+    }
+    return 1;
+});
+console.log("Los nombres ordenados son: ", nombresProductos)
+
+// Punto 5
+console.log("// Punto 5")
+let mayor = 0;
+preciosProductos.forEach(e => {
+    if(e > mayor) {
+        mayor = e
+    } return mayor
+});
+console.log("El producto más costoso es: " + mayor + "\nRedondeado: " + Math.round(mayor));
