@@ -1,13 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Acme&family=Sniglet&display=swap');
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Acme&family=Sniglet&display=swap");
 @import "variables";
 @import "mixin";
-
 
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Acme', sans-serif;
-    font-family: 'Sniglet', cursive;
+    font-family: "Acme", sans-serif;
+    font-family: "Sniglet", cursive;
 }
 
 a {
@@ -18,13 +18,13 @@ a {
 
 a:hover {
     /* border-top: 3px solid #0965a5;
-    border-bottom: 3px solid #0965a5; */
+  border-bottom: 3px solid #0965a5; */
     transition: 0.2s;
 }
 
 fieldset {
     border-spacing: 40px;
-    border-color: $color-secundario;
+    border-color: #113241;
     font-size: larger;
     border-spacing: 50px;
     padding: 1em;
@@ -38,38 +38,38 @@ footer {
 }
 
 form div {
-    margin: .5em;
+    margin: 0.5em;
 }
 
-input[type="radio"],
+input[type=radio],
 select {
-    background: #ffff;
+    background: white;
     cursor: pointer;
 }
 
-input[type="email"],
-input[type="number"],
-input[type="text"] {
-    background: #ffff;
-    border-radius: .25em;
+input[type=email],
+input[type=number],
+input[type=text] {
+    background: white;
+    border-radius: 0.25em;
 }
 
-input[type="date"]:focus,
-input[type="email"]:focus,
-input[type="number"]:focus,
-input[type="text"]:focus {
+input[type=date]:focus,
+input[type=email]:focus,
+input[type=number]:focus,
+input[type=text]:focus {
     background: antiquewhite;
 }
 
 header {
     font-size: larger;
     background-color: $color-base;
-    transition: .8s;
+    transition: 0.8s;
 }
 
 header:hover {
-    background-color: #ffff;
-    transition: .8s;
+    background-color: white;
+    transition: 0.8s;
 }
 
 legend {
@@ -94,22 +94,20 @@ section {
     padding: 20px;
 }
 
-.btnEnviar {
-    background: #ffff;
+.btnEnviar,
+.btnLimpiar {
+    background: white;
     border-radius: 10px;
-    border-color: #ffff;
+    border-color: white;
     padding: 5px;
     color: #c85a00;
 }
 
-.btnEnviar:hover {
+.btnEnviar:hover,
+.btnLimpiar:hover {
     padding: 6px;
     cursor: pointer;
-    transition: .4s;
-}
-
-.btnLimpiar {
-    @extend .btnEnviar;
+    transition: 0.4s;
 }
 
 .contenidoContacto {
@@ -126,10 +124,9 @@ section {
     justify-content: center;
 }
 
-
 .contenidoContacto h1 {
     text-align: center;
-    background: linear-gradient($color-secundario, #0965a5);
+    background: linear-gradient(#113241, #0965a5);
     -webkit-background-clip: text;
     color: transparent;
 }
@@ -145,16 +142,14 @@ section {
     padding: 10px;
 }
 
-
 .fondoContacto {
     position: relative;
     height: 100vh;
-    background-color: antiquewhite;
+    background-color: white;
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
 }
-
 
 .iconoGarra {
     padding: 40px;
@@ -185,38 +180,49 @@ section {
     background-color: $color-base;
     border: 0;
     padding: 0 20px 0 20px;
-    transition: .8s;
+    transition: 0.8s;
 }
 
 .menu-principal:hover {
-    background-color: #ffff;
-    transition: .8s;
+    background-color: white;
+    transition: 0.8s;
 }
 
 .movimientoIconos:hover {
     transform: rotate(15deg)
-  } 
+}
 
 .opiniones {
     background-color: antiquewhite;
     display: grid;
-    grid-template-areas: 'a a a b c c';
-
+    grid-template-areas: "a a a b c c";
     text-align: center;
     gap: 2rem;
     padding: 20px;
 }
 
 .opinion1 {
-    @include testimonios(a, rgb(167, 141, 202), purple);
+    grid-area: a;
+    background-color: rgb(167, 141, 202);
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 8px 8px 8px purple;
 }
 
 .opinion2 {
-    @include testimonios(b, rgb(121, 177, 167), teal)
+    grid-area: b;
+    background-color: rgb(121, 177, 167);
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 8px 8px 8px teal;
 }
 
 .opinion3 {
-    @include testimonios(c, rgb(255, 195, 127), brown)
+    grid-area: c;
+    background-color: rgb(255, 195, 127);
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 8px 8px 8px brown;
 }
 
 .principalIndex {
@@ -243,19 +249,17 @@ section {
     display: grid;
     gap: 3rem;
     justify-content: center;
-
     background-color: #d4f9ff;
     height: 100%;
     padding: 20px;
-    grid-template-areas: 'a b c d'
-        'e f g h';
+    grid-template-areas: "a b c d" "e f g h";
     grid-template-columns: 20% 20% 20% 20%;
     grid-template-rows: 40% 40% 40% 40%;
 }
 
 .tiendaGridHijo {
     position: relative;
-    background-color: $color-secundario;
+    background-color: #113241;
     overflow: hidden;
     border-radius: 0 15px 0 15px;
 }
@@ -270,7 +274,6 @@ section {
     transform: translate(-50%);
     padding: 30px;
     transition: 0.7s;
-
     text-align: center;
     cursor: pointer;
 }
@@ -278,6 +281,25 @@ section {
 .tiendaDescripcionProducto:hover {
     background-color: rgba(255, 255, 255, 0.8);
     transition: 0.7s;
+}
+
+.tableroAgregar {
+    background-color: $color-base;
+}
+
+.tableroAgregar:hover {
+    background: linear-gradient(#fdb86d, #d8e7f1);
+}
+
+.tableroProductos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.tableroProductosEnCarrito {
+    display: flex;
+    justify-content: space-around;
 }
 
 /* ID */
@@ -288,7 +310,7 @@ section {
 }
 
 #colorTitulos {
-    background: linear-gradient($color-secundario, #0965a5);
+    background: linear-gradient(#113241, #0965a5);
     -webkit-background-clip: text;
     color: transparent;
 }
@@ -301,12 +323,12 @@ section {
 
 #formDisenio {
     width: 40%;
-    color: #ffff;
+    color: white;
 }
 
 #formDisenio::before {
-    content: '';
-    background-color: $color-secundario;
+    content: "";
+    background-color: #113241;
     position: absolute;
     background-size: cover;
     width: 40%;
@@ -355,7 +377,6 @@ section {
     border: 3px solid #c85a00;
 }
 
-
 /* Dispositivos pequeños (tablets y teléfonos) */
 @media only screen and (min-width: 320px) and (max-width: 600px) {
     .iconosGarra {
@@ -392,3 +413,5 @@ section {
         width: 100%;
     }
 }
+
+/*# sourceMappingURL=base.css.map */

@@ -91,7 +91,8 @@ section {
   padding: 20px;
 }
 
-.btnEnviar, .btnLimpiar {
+.btnEnviar,
+.btnLimpiar {
   background: white;
   border-radius: 10px;
   border-color: white;
@@ -99,7 +100,8 @@ section {
   color: #c85a00;
 }
 
-.btnEnviar:hover, .btnLimpiar:hover {
+.btnEnviar:hover,
+.btnLimpiar:hover {
   padding: 6px;
   cursor: pointer;
   transition: 0.4s;
@@ -184,7 +186,7 @@ section {
 }
 
 .movimientoIconos:hover {
-  transform: rotate(15deg)
+  transform: rotate(15deg);
 }
 
 .opiniones {
@@ -276,6 +278,25 @@ section {
 .tiendaDescripcionProducto:hover {
   background-color: rgba(255, 255, 255, 0.8);
   transition: 0.7s;
+}
+
+.tableroAgregar {
+  background-color: #fdb86d;
+}
+
+.tableroAgregar:hover {
+  background: linear-gradient(#fdb86d, #d8e7f1);
+}
+
+.tableroProductos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.tableroProductosEnCarrito {
+  display: flex;
+  justify-content: space-around;
 }
 
 /* ID */
@@ -383,5 +404,6 @@ section {
     width: 100%;
   }
 }
+/*# sourceMappingURL=base.css.map */
 
 /*# sourceMappingURL=base.css.map */

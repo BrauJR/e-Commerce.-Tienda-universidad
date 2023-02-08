@@ -81,15 +81,15 @@
     </header>
     <div class="container">
         <div class="row productosTitulo" id="descripcionSomos">
-            <div class="col">
+            <div class="col m-0">
                 <div class="dropdown">
                     <button class="btn btn-outline-dark dropdown-toggle" type="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
-                        <i class="bi bi-funnel-fill"></i> Filtros
+                        <i class="bi bi-funnel-fill"></i> Ordenar
                     </button>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="#">Más recientes</a></li>
-                        <li><a class="dropdown-item" href="#">Orden alfabético</a></li>
+                        <li><a class="dropdown-item" href="#" id="orden">Orden alfabético</a></li>
                         <li><a class="dropdown-item" href="#">Más barato</a></li>
                     </ul>
                 </div>
@@ -99,17 +99,27 @@
             </div>
             <div class="col">
                 <div class="pb-1">
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-                        <button class="btn btn-outline-dark" type="submit"><i class="bi bi-cart-fill fs-5"></i></button>
+                    <form class="" role="search">
+
+                        <!-- <button class="btn btn-outline-dark" type="submit"><i class="bi bi-cart-fill fs-5"></i></button> -->
+                        <button type="button" class="btn btn-outline-dark position-relative" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+                            <i class="bi bi-cart-fill fs-5"></i> 
+                            <span id="contadorCarrito" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">0</span>
+                        </button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
+    <!-- <div class="d-flex justify-content-center">
+        <input class="form-control text-center w-25 mb-2" type="search" placeholder="Buscar" aria-label="Search">
+    </div> -->
 
-    <main class="tiendaGridPadre">
-        <div class="tiendaGridHijo">
+    <main class="tiendaGridPadree container-fluid">
+        <section id="contenidoproductos" class="tableroProductos  pt-2 justify-content-center">
+        </section>
+        <!-- <div class="tiendaGridHijo">
             <img src="./imagenes/productos.jpg" alt="Sudadera Garra" class="imgArticulos">
             <div class="tiendaDescripcionProducto">
                 <p>Sudadera Garra <br> "Leones"
@@ -164,13 +174,29 @@
                 <p>Portacredencial <br> "Leones"
                 <p>
             </div>
-        </div>
+        </div> -->
     </main>
+
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+        aria-labelledby="offcanvasWithBothOptionsLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title fs-3" id="offcanvasWithBothOptionsLabel">Carrito de compras <i
+                    class="bi bi-cart-fill fs-5"></i></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body" id="carritoContenido">
+            <!-- <p class="">Cantidad</p>
+            <p class="">Nombre</p>
+            <p class="">Precio</p> -->
+          
+        </div>
+    </div>
 
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
+    <script src="./script/scriptFuncionalidad.js"></script>
 </body>
 
 </html>
