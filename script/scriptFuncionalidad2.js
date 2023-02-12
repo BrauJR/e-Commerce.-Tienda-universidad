@@ -4,6 +4,7 @@ const carritoContenido = document.getElementById("carritoContenido");
 const tituloCarritoContenido = document.getElementById("tituloCarritoContenido");
 const totalCarritoContenido = document.getElementById("totalCarritoContenido");
 
+
 // Productos que se tienen en STOCK
 const productos = [
   { id: "itpl01", nombre: "Sudadera garra", precio: 560, subtotal: 560, img: "./imagenes/productos.jpg", piezas: 1 },
@@ -45,7 +46,7 @@ const obtenerTotal = () => {
   let totalVenta = total.reduce((acumulador, item) => acumulador + item)
   console.log(totalVenta);
   totalCarritoContenido.innerHTML =
-    `
+  `
   <h5>Total:</h5>
   <h5></h5>
   <h5>$${totalVenta}</h5>
@@ -66,37 +67,40 @@ const actualizarCarrito = () => {
     const div = document.createElement("div");
     div.classList.add("tableroProductosEnCarrito");
     div.innerHTML =
-      `
-      <p >${articulo.nombre}</p>
-      <p >${articulo.piezas}</p>
-      <p >${articulo.precio}</p>
-      <p >${articulo.subtotal}</p>
+    `   
+    <p >${articulo.nombre}</p>
+    <p >${articulo.piezas}</p>
+    <p >${articulo.precio}</p>
+    <p >${articulo.subtotal}</p>
     `
     carritoContenido.appendChild(div);
   });
 };
 
-// Función que imprime en la página los productos
-const ordenInicio = () => {
-  productos.forEach(articulo => {
+// Función que ordena por precio
+const ordenarPorPrecio = () => {
+  productos.sort((a, b) => {
+    return b.precio - a.precio;
+  });
+  productos.forEach((e) => {
     const div = document.createElement("div");
     div.innerHTML =
       `
-    <div id="prueba" class="col-3 card text-center p-0 mx-5 my-3 align-items-center" style="width: 15rem;">
-      <img src="${articulo.img}" class="card-img-top" alt="${articulo.nombre}">
+    <div class="col-3 card text-center p-0 mx-5 my-3 align-items-center" style="width: 15rem;">
+      <img src="${e.img}" class="card-img-top" alt="${e.nombre}">
       <div class="card-body">
-        <h5 class="card-title">${articulo.nombre}</h5>
-        <p class="card-text">$${articulo.precio}
+        <h5 class="card-title">${e.nombre}</h5>
+        <p class="card-text">$${e.precio}
         <br>
-        <button class="btn btn-primar tableroAgregar" id="agregarCarrito${articulo.id}">Agregar al carrito</button>
+        <button class="btn btn-primar tableroAgregar" id="agregarCarrito${e.id}">Agregar al carrito</button>
       </div>
     </div>
     `
     contenidoproductos.appendChild(div);
 
-    const botonAgregarCarrito = document.getElementById(`agregarCarrito${articulo.id}`);
+    const botonAgregarCarrito = document.getElementById(`agregarCarrito${e.id}`);
     botonAgregarCarrito.addEventListener("click", () => {
-      agregarCarrito(articulo.id, carrito);
+      agregarCarrito(e.id, carrito);
       agregarContadorCarrito();
       actualizarCarrito();
       obtenerTotal();
@@ -104,9 +108,8 @@ const ordenInicio = () => {
   });
 };
 
-
 window.onload = () => {
-  ordenInicio();
+  ordenarPorPrecio();
 };
 
 // Pago Paypal
@@ -148,3 +151,9 @@ function initPayPalButton() {
   }).render('#paypal-button-container');
 }
 initPayPalButton();
+
+
+
+
+
+
