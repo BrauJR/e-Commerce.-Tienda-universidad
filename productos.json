@@ -1,0 +1,26 @@
+[
+    {
+        "id": "itpl10",
+        "nombre": "Hoddie ITP",
+        "precio": 450,
+        "subtotal": 450, 
+        "img": "./imagenes/p11.jpg",
+        "piezas": 1
+    },
+    {
+        "id": "itpl12",
+        "nombre": "Kit pareja",
+        "precio": 400,
+        "subtotal": 400, 
+        "img": "./imagenes/p12.jpg",
+        "piezas": 1
+    },
+    {
+        "id": "itpl11",
+        "nombre": "Chamarra universitaria",
+        "precio": 650,
+        "subtotal": 650, 
+        "img": "./imagenes/p10.jpg",
+        "piezas": 1
+    }
+]

@@ -12,9 +12,10 @@ const productos = [
   { id: "itpl03", nombre: "Playera melón", precio: 260, subtotal: 260, img: "./imagenes/p2.jpg", piezas: 1 },
   { id: "itpl04", nombre: "Sudadera león", precio: 550, subtotal: 550, img: "./imagenes/p3.jpg", piezas: 1 },
   { id: "itpl05", nombre: "Credencialero", precio: 80, subtotal: 80, img: "./imagenes/p7.jpg", piezas: 1 },
-  { id: "itpl06", nombre: "Gorra león ITP", precio: 200, subtotal: 200, img: "./imagenes/p5.jpg", piezas: 1 },
-  { id: "itpl07", nombre: "Cubreboca ITP", precio: 40, subtotal: 40, img: "./imagenes/p6.jpg", piezas: 1 },
-  { id: "itpl08", nombre: "Taza león ITP", precio: 150, subtotal: 150, img: "./imagenes/p4.jpg", piezas: 1 },
+  { id: "itpl06", nombre: "Chamarra ITP", precio: 600, subtotal: 600, img: "./imagenes/p9.jpg", piezas: 1 },
+  { id: "itpl07", nombre: "Gorra león ITP", precio: 200, subtotal: 200, img: "./imagenes/p5.jpg", piezas: 1 },
+  { id: "itpl08", nombre: "Cubreboca ITP", precio: 40, subtotal: 40, img: "./imagenes/p6.jpg", piezas: 1 },
+  { id: "itpl09", nombre: "Taza león ITP", precio: 150, subtotal: 150, img: "./imagenes/p4.jpg", piezas: 1 },
 ];
 
 // Carrito de compras
@@ -51,12 +52,13 @@ const obtenerTotal = () => {
   <h5></h5>
   <h5>$${totalVenta}</h5>
   `
+  return totalVenta;
 }
 
 // Función que muestra los productos del carrito
 const actualizarCarrito = () => {
   tituloCarritoContenido.innerHTML =
-  `
+    `
   <h5>Producto</h5>
   <h5>Cantidad</h5>
   <h5>Precio</h5>
@@ -67,7 +69,7 @@ const actualizarCarrito = () => {
     const div = document.createElement("div");
     div.classList.add("tableroProductosEnCarrito");
     div.innerHTML =
-    `   
+      `   
     <p >${articulo.nombre}</p>
     <p >${articulo.piezas}</p>
     <p >${articulo.precio}</p>
@@ -113,6 +115,34 @@ window.onload = () => {
   ordenarPorPrecio();
 };
 
+// API JSON
+const botonAPI = document.getElementById("botonAPI");
+const contenidoproductosAPI = document.getElementById("contenidoproductosAPI");
+
+botonAPI.addEventListener("click", () => {
+  contenidoproductosAPI.innerHTML = "";
+  llamarAPI();
+});
+
+const llamarAPI = () => {
+  fetch("productos.json")
+    .then(articulo => articulo.json())
+    .then(productos => productos.forEach(articulo => {
+      contenidoproductosAPI.innerHTML +=
+        `
+      <div id="prueba" class="col-3 card text-center p-0 mx-5 my-3 align-items-center" style="width: 15rem;">
+        <img src="${articulo.img}" class="card-img-top" alt="${articulo.nombre}">
+        <div class="card-body">
+          <h5 class="card-title">${articulo.nombre}</h5>
+          <p class="card-text">$${articulo.precio}
+          <br>
+          <button class="btn btn-warning disabled" id="agregarCarrito${articulo.id}">Producto agotado</button>
+        </div>
+      </div>
+      `
+    }))
+};
+
 // Pago Paypal
 function initPayPalButton() {
   paypal.Buttons({
@@ -125,8 +155,9 @@ function initPayPalButton() {
     },
 
     createOrder: function (data, actions) {
+      let monto_pago = obtenerTotal();
       return actions.order.create({
-        purchase_units: [{ "amount": { "currency_code": "MXN", "value": totalVenta } }]
+        purchase_units: [{ "amount": { "currency_code": "MXN", "value": monto_pago } }]
       });
     },
 
@@ -134,7 +165,7 @@ function initPayPalButton() {
       return actions.order.capture().then(function (orderData) {
 
         // Full available details
-        console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+        console.log('Capture result', orderData, JSON.stringify(orderData, null, monto_pago));
 
         // Show a success message within this page, e.g.
         const element = document.getElementById('paypal-button-container');
